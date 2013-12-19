@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C3F9C133-946F-43D1-9C82-A6870C0A6ABC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VisionModule</RootNamespace>
+    <AssemblyName>VisionModule</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Libraries\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugRaspberry|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DebugRaspberry\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;RASPBERRY</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>true</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <Choose>
+    <When Condition=" '$(Configuration)'=='Debug' " />
+    <When Condition=" '$(Configuration)'=='DebugRaspberry' ">
+      <ItemGroup>
+        <Reference Include="Emgu.CV, Version=2.3.0.1416, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <HintPath>..\_External\emgu2.3.2\Emgu.CV.dll</HintPath>
+        </Reference>
+        <Reference Include="Emgu.CV.UI, Version=2.3.0.1416, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <HintPath>..\_External\emgu2.3.2\Emgu.CV.UI.dll</HintPath>
+        </Reference>
+        <Reference Include="Emgu.Util, Version=2.3.0.1416, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <HintPath>..\_External\emgu2.3.2\Emgu.Util.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <Reference Include="Accord.Imaging">
+      <HintPath>..\..\_External\Accord.Net\Accord.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.MachineLearning">
+      <HintPath>..\..\_External\Accord.Net\Accord.MachineLearning.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math">
+      <HintPath>..\..\_External\Accord.Net\Accord.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Statistics">
+      <HintPath>..\..\_External\Accord.Net\Accord.Statistics.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Vision">
+      <HintPath>..\..\_External\Accord.Net\Accord.Vision.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge">
+      <HintPath>..\..\_External\Aforge\Release\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging">
+      <HintPath>..\..\_External\Aforge\Release\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math">
+      <HintPath>..\..\_External\Aforge\Release\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>..\..\_External\Aforge\Release\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>..\..\_External\Aforge\Release\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Vision">
+      <HintPath>..\..\_External\Aforge\Release\AForge.Vision.dll</HintPath>
+    </Reference>
+    <Reference Include="Dejavu">
+      <HintPath>..\..\_External\Dejavu 1.0 Beta 1 Sources\Dejavu\bin\Debug\Dejavu.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV">
+      <HintPath>..\..\_External\EMGUCV\2.4.2\Emgu.CV.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.GPU">
+      <HintPath>..\..\_External\EMGUCV\2.4.2\Emgu.CV.GPU.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI">
+      <HintPath>..\..\_External\EMGUCV\2.4.2\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.Util">
+      <HintPath>..\..\_External\EMGUCV\2.4.2\Emgu.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="KPP Core">
+      <HintPath>..\..\_External\KPP Core\KPP Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Net.Kniaz.LMA">
+      <HintPath>..\..\_External\LMA\bin\Release\Net.Kniaz.LMA.dll</HintPath>
+    </Reference>
+    <Reference Include="ObjectListView">
+      <HintPath>..\..\_External\ObjectListView.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TIS.Imaging.ICImagingControl32">
+      <HintPath>..\..\_External\TIS.Imaging.ICImagingControl32.dll</HintPath>
+    </Reference>
+    <Reference Include="uEyeDotNetApiLayer">
+      <HintPath>..\..\_External\uEye\x86\uEyeDotNetApiLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="uEyeDotNetUserLayer">
+      <HintPath>..\..\_External\uEye\x86\uEyeDotNetUserLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>..\..\_External\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acquisition.cs" />
+    <Compile Include="Forms\ArrowPad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ArrowPad.Designer.cs">
+      <DependentUpon>ArrowPad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConfigurationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConfigurationsForm.designer.cs">
+      <DependentUpon>ConfigurationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Config\ProjectOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Config\ProjectOptionsForm.Designer.cs">
+      <DependentUpon>ProjectOptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Config\SplashScreenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Config\SplashScreenForm.Designer.cs">
+      <DependentUpon>SplashScreenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Config\UndoRedoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Config\UndoRedoControl.Designer.cs">
+      <DependentUpon>UndoRedoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Config\UndoSelector.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomTextBox.Designer.cs" />
+    <Compile Include="Forms\ExposurePropertySet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ExposurePropertySet.Designer.cs" />
+    <Compile Include="Forms\VisionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VisionForm.designer.cs">
+      <DependentUpon>VisionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ImageContainerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImageContainerForm.designer.cs">
+      <DependentUpon>ImageContainerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InspectionOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InspectionOptionsForm.Designer.cs" />
+    <Compile Include="Forms\InspectionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InspectionsForm.Designer.cs" />
+    <Compile Include="Forms\InspImageCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\InspImageCtrl.designer.cs">
+      <DependentUpon>InspImageCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KeyPad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\KeyPad.Designer.cs" />
+    <Compile Include="Forms\ListInspForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListInspForm.designer.cs">
+      <DependentUpon>ListInspForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListROIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListROIForm.designer.cs">
+      <DependentUpon>ListROIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ResultsConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ResultsConfiguration.designer.cs">
+      <DependentUpon>ResultsConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewInspections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewInspections.designer.cs">
+      <DependentUpon>ViewInspections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ROI\AForge\ShapeChecker.cs" />
+    <Compile Include="ROI\Array\Arrays.cs" />
+    <Compile Include="ROI\Circle Funtions\CircleFitting.cs" />
+    <Compile Include="ROI\Measurment\CircleFitter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeEditors.cs" />
+    <Compile Include="Vision.cs" />
+    <Compile Include="Forms\OutputResultConfForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OutputResultConfForm.Designer.cs">
+      <DependentUpon>OutputResultConfForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\uEye\CameraControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\uEye\CameraControlForm.Designer.cs">
+      <DependentUpon>CameraControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ZoneSelectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ZoneSelectorForm.Designer.cs">
+      <DependentUpon>ZoneSelectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\DynamicTypeDescriptor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ROI\Area Functions\BlobAnalysis.cs" />
+    <Compile Include="ROI\Area Functions\ProcessingFunctionAreaAnalysis.cs" />
+    <Compile Include="ROI\BitmapOutProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ROI\BitmapOutProperty.Designer.cs">
+      <DependentUpon>BitmapOutProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ROI\Math\ProcessingFunctionsMath.cs" />
+    <Compile Include="ROI\Measurment\ProcessingFunctionLine2LineAngle.cs" />
+    <Compile Include="ROI\Measurment\ProcessingFunctionPoints2Circle.cs" />
+    <Compile Include="ROI\Measurment\ProcessingFunctionPoints2Line.cs" />
+    <Compile Include="ROI\PassFail\ProcessingFunctionsPassFail.cs" />
+    <Compile Include="ROI\Processing Functions\Functions.cs" />
+    <Compile Include="ROI\Measurment\ProcessingFunctionPoint2PointDist.cs" />
+    <Compile Include="ROI\Line Functions\ProcessingFunctionLineEdge.cs" />
+    <Compile Include="ROI\Circle Funtions\CircleFunctions.cs" />
+    <Compile Include="ROI\Contour\ProcessingFunctionContourAnalysis.cs" />
+    <Compile Include="ROI\Line Functions\ProcessingFunctionLineFit.cs" />
+    <Compile Include="ROI\Pre Pos\ProcessingFunctionPrePos.cs" />
+    <Compile Include="ROI\ProcessingFunctionPixelanalysis.cs" />
+    <Compile Include="ROI\ProcessingFunctionAttribute.cs" />
+    <Compile Include="ROI\ProcessingFunctionBase.cs" />
+    <Compile Include="ROI\Area Functions\ProcessingFunctionBoundingRectangle.cs" />
+    <Compile Include="ROI\PropertySetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ROI\PropertySetForm.Designer.cs">
+      <DependentUpon>PropertySetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ROI\ROI.cs" />
+    <Compile Include="ROI\Test\ProcessingFunctionsTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\ArrowPad.resx">
+      <DependentUpon>ArrowPad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConfigurationsForm.pt-PT.resx">
+      <DependentUpon>ConfigurationsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConfigurationsForm.resx">
+      <DependentUpon>ConfigurationsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Config\ProjectOptionsForm.pt-PT.resx">
+      <DependentUpon>ProjectOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Config\ProjectOptionsForm.resx">
+      <DependentUpon>ProjectOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Config\SplashScreenForm.resx">
+      <DependentUpon>SplashScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Config\UndoRedoControl.resx">
+      <DependentUpon>UndoRedoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomTextBox.resx" />
+    <EmbeddedResource Include="Forms\ExposurePropertySet.resx" />
+    <EmbeddedResource Include="Forms\OutputResultConfForm.pt-PT.resx">
+      <DependentUpon>OutputResultConfForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VisionForm.pt-PT.resx">
+      <DependentUpon>VisionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VisionForm.resx">
+      <DependentUpon>VisionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageContainerForm.pt-PT.resx">
+      <DependentUpon>ImageContainerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageContainerForm.resx">
+      <DependentUpon>ImageContainerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InspectionOptionsForm.resx" />
+    <EmbeddedResource Include="Forms\InspectionsForm.resx" />
+    <EmbeddedResource Include="Forms\InspImageCtrl.resx">
+      <DependentUpon>InspImageCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KeyPad.resx" />
+    <EmbeddedResource Include="Forms\ListInspForm.pt-PT.resx">
+      <DependentUpon>ListInspForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListInspForm.resx">
+      <DependentUpon>ListInspForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListROIForm.pt-PT.resx">
+      <DependentUpon>ListROIForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListROIForm.resx">
+      <DependentUpon>ListROIForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OutputResultConfForm.resx">
+      <DependentUpon>OutputResultConfForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ResultsConfiguration.pt-PT.resx">
+      <DependentUpon>ResultsConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ResultsConfiguration.resx">
+      <DependentUpon>ResultsConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectorControl.resx" />
+    <EmbeddedResource Include="Forms\uEye\CameraControlForm.resx">
+      <DependentUpon>CameraControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewInspections.pt-PT.resx">
+      <DependentUpon>ViewInspections.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewInspections.resx">
+      <DependentUpon>ViewInspections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ZoneSelectorForm.resx">
+      <DependentUpon>ZoneSelectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Language\Res.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Language\Res.pt-PT.resx" />
+    <EmbeddedResource Include="ROI\BitmapOutProperty.resx">
+      <DependentUpon>BitmapOutProperty.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ROI\PropertySetForm.resx">
+      <DependentUpon>PropertySetForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ROI\Matching\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IOModule\IOModule.csproj">
+      <Project>{DC8D7883-FB3F-4964-9F0D-B3B0B5907DD3}</Project>
+      <Name>IOModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KPPAutomationCore\KPPAutomationCore.csproj">
+      <Project>{96625E2E-382E-412F-A3BB-95A773F3B8D8}</Project>
+      <Name>KPPAutomationCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1379595514_navigate-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1379595753_navigate-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1379595762_navigate-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1379595792_navigate-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1379598142_undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1379598145_go-into.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Acesslock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AcessUnlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-appointment-new-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-list-add-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-redo-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-remove-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-undo-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connect_established.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\figure2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pad.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Play-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portugal-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings-icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usa-icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

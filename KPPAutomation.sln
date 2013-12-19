@@ -1,0 +1,106 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPPAutomation", "KPPAutomation\KPPAutomation.csproj", "{BB59A586-901E-413E-9AE9-AE03075C1140}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPPVision", "KPPVision\KPPVision.csproj", "{C3F9C133-946F-43D1-9C82-A6870C0A6ABC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPPAutomationCore", "KPPAutomationCore\KPPAutomationCore.csproj", "{96625E2E-382E-412F-A3BB-95A773F3B8D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOModule", "IOModule\IOModule.csproj", "{DC8D7883-FB3F-4964-9F0D-B3B0B5907DD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpsonModule", "EpsonModule\EpsonModule\EpsonModule.csproj", "{A150FCBA-35C2-41A0-B534-E83D89DB4212}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		DebugRaspberry|Any CPU = DebugRaspberry|Any CPU
+		DebugRaspberry|Mixed Platforms = DebugRaspberry|Mixed Platforms
+		DebugRaspberry|x86 = DebugRaspberry|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB59A586-901E-413E-9AE9-AE03075C1140}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{BB59A586-901E-413E-9AE9-AE03075C1140}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{BB59A586-901E-413E-9AE9-AE03075C1140}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{BB59A586-901E-413E-9AE9-AE03075C1140}.Debug|x86.ActiveCfg = Debug|x86
+		{BB59A586-901E-413E-9AE9-AE03075C1140}.Debug|x86.Build.0 = Debug|x86
+		{BB59A586-901E-413E-9AE9-AE03075C1140}.DebugRaspberry|Any CPU.ActiveCfg = Debug|x86
+		{BB59A586-901E-413E-9AE9-AE03075C1140}.DebugRaspberry|Mixed Platforms.ActiveCfg = Debug|x86
+		{BB59A586-901E-413E-9AE9-AE03075C1140}.DebugRaspberry|Mixed Platforms.Build.0 = Debug|x86
+		{BB59A586-901E-413E-9AE9-AE03075C1140}.DebugRaspberry|x86.ActiveCfg = Debug|x86
+		{BB59A586-901E-413E-9AE9-AE03075C1140}.DebugRaspberry|x86.Build.0 = Debug|x86
+		{BB59A586-901E-413E-9AE9-AE03075C1140}.Release|Any CPU.ActiveCfg = Release|x86
+		{BB59A586-901E-413E-9AE9-AE03075C1140}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{BB59A586-901E-413E-9AE9-AE03075C1140}.Release|Mixed Platforms.Build.0 = Release|x86
+		{BB59A586-901E-413E-9AE9-AE03075C1140}.Release|x86.ActiveCfg = Release|x86
+		{BB59A586-901E-413E-9AE9-AE03075C1140}.Release|x86.Build.0 = Release|x86
+		{C3F9C133-946F-43D1-9C82-A6870C0A6ABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3F9C133-946F-43D1-9C82-A6870C0A6ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3F9C133-946F-43D1-9C82-A6870C0A6ABC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C3F9C133-946F-43D1-9C82-A6870C0A6ABC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C3F9C133-946F-43D1-9C82-A6870C0A6ABC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C3F9C133-946F-43D1-9C82-A6870C0A6ABC}.DebugRaspberry|Any CPU.ActiveCfg = DebugRaspberry|Any CPU
+		{C3F9C133-946F-43D1-9C82-A6870C0A6ABC}.DebugRaspberry|Any CPU.Build.0 = DebugRaspberry|Any CPU
+		{C3F9C133-946F-43D1-9C82-A6870C0A6ABC}.DebugRaspberry|Mixed Platforms.ActiveCfg = DebugRaspberry|Any CPU
+		{C3F9C133-946F-43D1-9C82-A6870C0A6ABC}.DebugRaspberry|Mixed Platforms.Build.0 = DebugRaspberry|Any CPU
+		{C3F9C133-946F-43D1-9C82-A6870C0A6ABC}.DebugRaspberry|x86.ActiveCfg = DebugRaspberry|Any CPU
+		{C3F9C133-946F-43D1-9C82-A6870C0A6ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3F9C133-946F-43D1-9C82-A6870C0A6ABC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3F9C133-946F-43D1-9C82-A6870C0A6ABC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C3F9C133-946F-43D1-9C82-A6870C0A6ABC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C3F9C133-946F-43D1-9C82-A6870C0A6ABC}.Release|x86.ActiveCfg = Release|Any CPU
+		{96625E2E-382E-412F-A3BB-95A773F3B8D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96625E2E-382E-412F-A3BB-95A773F3B8D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96625E2E-382E-412F-A3BB-95A773F3B8D8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{96625E2E-382E-412F-A3BB-95A773F3B8D8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{96625E2E-382E-412F-A3BB-95A773F3B8D8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{96625E2E-382E-412F-A3BB-95A773F3B8D8}.DebugRaspberry|Any CPU.ActiveCfg = Debug|Any CPU
+		{96625E2E-382E-412F-A3BB-95A773F3B8D8}.DebugRaspberry|Any CPU.Build.0 = Debug|Any CPU
+		{96625E2E-382E-412F-A3BB-95A773F3B8D8}.DebugRaspberry|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{96625E2E-382E-412F-A3BB-95A773F3B8D8}.DebugRaspberry|Mixed Platforms.Build.0 = Debug|Any CPU
+		{96625E2E-382E-412F-A3BB-95A773F3B8D8}.DebugRaspberry|x86.ActiveCfg = Debug|Any CPU
+		{96625E2E-382E-412F-A3BB-95A773F3B8D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96625E2E-382E-412F-A3BB-95A773F3B8D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96625E2E-382E-412F-A3BB-95A773F3B8D8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{96625E2E-382E-412F-A3BB-95A773F3B8D8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{96625E2E-382E-412F-A3BB-95A773F3B8D8}.Release|x86.ActiveCfg = Release|Any CPU
+		{DC8D7883-FB3F-4964-9F0D-B3B0B5907DD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC8D7883-FB3F-4964-9F0D-B3B0B5907DD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC8D7883-FB3F-4964-9F0D-B3B0B5907DD3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DC8D7883-FB3F-4964-9F0D-B3B0B5907DD3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{DC8D7883-FB3F-4964-9F0D-B3B0B5907DD3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DC8D7883-FB3F-4964-9F0D-B3B0B5907DD3}.DebugRaspberry|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC8D7883-FB3F-4964-9F0D-B3B0B5907DD3}.DebugRaspberry|Any CPU.Build.0 = Debug|Any CPU
+		{DC8D7883-FB3F-4964-9F0D-B3B0B5907DD3}.DebugRaspberry|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DC8D7883-FB3F-4964-9F0D-B3B0B5907DD3}.DebugRaspberry|Mixed Platforms.Build.0 = Debug|Any CPU
+		{DC8D7883-FB3F-4964-9F0D-B3B0B5907DD3}.DebugRaspberry|x86.ActiveCfg = Debug|Any CPU
+		{DC8D7883-FB3F-4964-9F0D-B3B0B5907DD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC8D7883-FB3F-4964-9F0D-B3B0B5907DD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC8D7883-FB3F-4964-9F0D-B3B0B5907DD3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{DC8D7883-FB3F-4964-9F0D-B3B0B5907DD3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{DC8D7883-FB3F-4964-9F0D-B3B0B5907DD3}.Release|x86.ActiveCfg = Release|Any CPU
+		{A150FCBA-35C2-41A0-B534-E83D89DB4212}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{A150FCBA-35C2-41A0-B534-E83D89DB4212}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{A150FCBA-35C2-41A0-B534-E83D89DB4212}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{A150FCBA-35C2-41A0-B534-E83D89DB4212}.Debug|x86.ActiveCfg = Debug|x86
+		{A150FCBA-35C2-41A0-B534-E83D89DB4212}.Debug|x86.Build.0 = Debug|x86
+		{A150FCBA-35C2-41A0-B534-E83D89DB4212}.DebugRaspberry|Any CPU.ActiveCfg = Debug|x86
+		{A150FCBA-35C2-41A0-B534-E83D89DB4212}.DebugRaspberry|Mixed Platforms.ActiveCfg = Debug|x86
+		{A150FCBA-35C2-41A0-B534-E83D89DB4212}.DebugRaspberry|Mixed Platforms.Build.0 = Debug|x86
+		{A150FCBA-35C2-41A0-B534-E83D89DB4212}.DebugRaspberry|x86.ActiveCfg = Debug|x86
+		{A150FCBA-35C2-41A0-B534-E83D89DB4212}.DebugRaspberry|x86.Build.0 = Debug|x86
+		{A150FCBA-35C2-41A0-B534-E83D89DB4212}.Release|Any CPU.ActiveCfg = Release|x86
+		{A150FCBA-35C2-41A0-B534-E83D89DB4212}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{A150FCBA-35C2-41A0-B534-E83D89DB4212}.Release|Mixed Platforms.Build.0 = Release|x86
+		{A150FCBA-35C2-41A0-B534-E83D89DB4212}.Release|x86.ActiveCfg = Release|x86
+		{A150FCBA-35C2-41A0-B534-E83D89DB4212}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
