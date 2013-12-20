@@ -505,7 +505,7 @@ namespace VisionModule {
                 if (Box1.SelectedItem == null) {
                     return value;
                 } else {
-                    return Box1.SelectedItem;
+                    return ((FilterInfo)Box1.SelectedItem).MonikerString;
                 }
 
             }

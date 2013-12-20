@@ -866,7 +866,7 @@ namespace VisionModule {
             }
         }
 
-        [NonSerialized, Browsable(false)]
+        [NonSerialized,XmlIgnore, Browsable(false)]
         public object ImageLocker = new object();
 
         [NonSerialized]

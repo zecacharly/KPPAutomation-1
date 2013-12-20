@@ -2752,9 +2752,9 @@ namespace VisionModule {
                         VisionConfig.WriteConfigurationFile();
                     }
 
-                    if (VisionProjectsConfig!=null) {
-                        VisionProjectsConfig.WriteConfigurationFile();
-                    }
+                    //if (VisionProjectsConfig!=null) {
+                    //    VisionProjectsConfig.WriteConfigurationFile();
+                    //}
                     //if (File.Exists(configFile) == false) {
                     __dockPanel1.SaveAsXml(VisionConfig.DockFile);
                     //}
