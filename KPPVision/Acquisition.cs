@@ -1776,7 +1776,7 @@ namespace VisionModule {
     }
 
     public class DirectShowCameraCapture : BaseCapture {
-        private static FilterInfoCollection _DevicesAvaible = null;
+        private static FilterInfoCollection _DevicesAvaible = new FilterInfoCollection(FilterCategory.VideoInputDevice);
 
         public static FilterInfoCollection DevicesAvaible {
             get { return _DevicesAvaible; }         
@@ -1785,23 +1785,25 @@ namespace VisionModule {
 
         public static void StopCameras() {
             
-            for (int i = 0; i < DirectShowCameras.Count-1; i++) {
+            for (int i = 0; i < DirectShowCameras.Count; i++) {
+                
                 DirectShowCameras[i].Stop();
+                DirectShowCameras[i].WaitForStop();
                 DirectShowCameras[i] = null;
             }
             DirectShowCameras.Clear();
         }
 
-        public static void InitCameras() {
-            if (DirectShowCameras.Count==0) {
-                _DevicesAvaible = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+        //public static void InitCameras() {
+        //    if (DirectShowCameras.Count==0) {
+        //        _DevicesAvaible = new FilterInfoCollection(FilterCategory.VideoInputDevice);
 
-                foreach (FilterInfo deviceinfo in DevicesAvaible) {
-                    DirectShowCameras.Add(new VideoCaptureDevice(deviceinfo.MonikerString));
-                }    
-            }
+        //        foreach (FilterInfo deviceinfo in DevicesAvaible) {
+        //            DirectShowCameras.Add(new VideoCaptureDevice(deviceinfo.MonikerString));
+        //        }    
+        //    }
             
-        }
+        //}
 
 
 
@@ -1822,7 +1824,7 @@ namespace VisionModule {
                         waitImage.Set();
                         _Camera.Stop();
                         _Camera.WaitForStop();
-                        _Camera = null;
+                        _Camera.NewFrame -=_Camera_NewFrame;
                     }
                     if (value != null) {
                         _Camera = value;
@@ -1841,7 +1843,15 @@ namespace VisionModule {
         void SetCamera(String value) {
             try {
                 Camera = DirectShowCameras.Find(moniker => moniker.Source == value);
-              
+                if (Camera==null) {
+
+                   FilterInfo caminf= _DevicesAvaible.Cast<FilterInfo>().ToList().Find(moniker => moniker.MonikerString== value);
+                   if (caminf!=null) {
+                       Camera = new VideoCaptureDevice(value);
+                       DirectShowCameras.Add(Camera);
+                   }
+                    
+                }
             } catch (Exception exp) {
 
             }
@@ -1884,7 +1894,7 @@ namespace VisionModule {
         //}
 
         private String _CameraName ="";
-        [XmlAttribute, DisplayName("Camera Name"), ReadOnly(true), Browsable(true)]
+        [XmlIgnore, DisplayName("Camera Name"), ReadOnly(true), Browsable(true)]
         public override String CameraName {
             get {
                 return _CameraName;
@@ -1978,7 +1988,7 @@ namespace VisionModule {
             }
             waitImage.Reset();
             GotFrame = false;
-            waitImage.WaitOne(3000);
+            waitImage.WaitOne();
             Image<Bgr, Byte> newimage = null;
 
 
@@ -2009,7 +2019,7 @@ namespace VisionModule {
 
         public DirectShowCameraCapture() {
 
-            InitCameras();
+            //InitCameras();
             this.CameraName = "Direct Show input";
             this.Camtype = CameraTypes.DirectShow;
             
@@ -2017,7 +2027,7 @@ namespace VisionModule {
 
 
         public override void Dispose() {
-            
+            waitImage.Set();
         }
 
     }

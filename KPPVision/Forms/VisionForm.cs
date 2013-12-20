@@ -2745,7 +2745,7 @@ namespace VisionModule {
 
 
 
-
+                    DirectShowCameraCapture.StopCameras();
 
 
                     if (VisionConfig!=null) {                        
